@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\bcontroller;
+use App\Http\Controllers\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -54,3 +55,10 @@ Route::view('/noaccess','noaccess');
 Route::view('/about','about')->middleware('protected');
 Route::get('/user',[UserController::class,'index']);
 // Route::get('/user',[UserController::class,'index'])->name('user.index');
+//19 july
+
+
+Route::get('/create',[RegisterController::class,'Create'])->name('create');
+Route::post('/store',[RegisterController::class,'Store'])->name('store');
+Route::get('/output',[RegisterController::class,'index'])->name('index');
+// Route::get('output/{id}/edit',[RegisterController::class,'edit'])->name('edit');
