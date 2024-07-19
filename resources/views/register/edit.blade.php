@@ -10,7 +10,7 @@
 <body>
 <div class="container" style="margin-left: 25%">
 
-    <form action="{{route('store')}}" method="POST">
+    <form action="{{route('update',$edit->id)}}" method="POST">
         @csrf
         <br>
         <div class="form-group col-6">
@@ -27,7 +27,7 @@
           </div>
           <div class="form-group col-6">
             <label for="exampleInputEmail1">Phobe_no</label>
-            <input type="number" class="form-control" name="phone_no" value="{{$edit->pone_no}}" aria-describedby="emailHelp" placeholder="Enter phone_no">
+            <input type="number" class="form-control" name="phone_no" value="{{$edit->phone_no}}" aria-describedby="emailHelp" placeholder="Enter phone_no">
           </div><br>
         <button type="submit" class="btn btn-primary">Update</button>
 

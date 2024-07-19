@@ -37,9 +37,35 @@ class RegisterController extends Controller
          $register->save();
          return redirect()->route('index');
     }
-    // public function edit(int $id)
-    // {
-    //     $edit = Registration::FindOrFail($id);
-    //     return view('register.edit',compact('edit'));
-    // }
+    public function Edit($id)
+    {
+        $edit = Registration::FindOrFail($id);
+        return view('register.edit',compact('edit'));
+    }
+
+ public function Update(Request $request,$id)
+ {
+     $request->validate([
+         'name'=>'required',
+         'f_name'=>'required',
+         'address'=>'required',
+         'phone_no'=>'required',
+
+
+        ]);
+    $edit = Registration::FindOrFail($id);
+    $edit->name=$request->name;
+    $edit->f_name=$request->f_name;
+    $edit->address=$request->address;
+    $edit->phone_no=$request->phone_no;
+    $edit->save();
+    return redirect()->route('index');
+ }
+
+ public function Delete($id)
+ {
+    $register=Registration::find($id);
+    $register->delete();
+    return back();
+ }
 }

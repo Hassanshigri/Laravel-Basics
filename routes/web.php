@@ -57,8 +57,10 @@ Route::get('/user',[UserController::class,'index']);
 // Route::get('/user',[UserController::class,'index'])->name('user.index');
 //19 july
 
-
 Route::get('/create',[RegisterController::class,'Create'])->name('create');
 Route::post('/store',[RegisterController::class,'Store'])->name('store');
 Route::get('/output',[RegisterController::class,'index'])->name('index');
+Route::get('/edit/{id}',[RegisterController::class,'Edit'])->name('edit');
+Route::post('/update/{id}',[RegisterController::class,'Update'])->name('update');
+Route::get('/delete/{id}',[RegisterController::class,'Delete'])->name('delete');
 // Route::get('output/{id}/edit',[RegisterController::class,'edit'])->name('edit');

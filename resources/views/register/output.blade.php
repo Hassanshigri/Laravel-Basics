@@ -27,8 +27,8 @@
                 <td> {{$item->f_name}} </td>
                 <td> {{$item->address}} </td>
                 <td> {{$item->phone_no}} </td>
-                <td> <a href="#" class="btn btn-success btn-sm">EDIT</a>
-                    <a href="#"class="btn btn-danger btn-sm">Delete</a></td>
+                <td> <a href="{{route('edit',$item->id)}}" class="btn btn-success btn-sm">EDIT</a>
+                    <a href="{{route('delete',$item->id)}}"class="btn btn-danger btn-sm">Delete</a></td>
               </tr>
 
             @endforeach
